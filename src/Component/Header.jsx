@@ -16,12 +16,23 @@ const Header = () => {
         </div>
         <div className="header">
             <div className="left-block">
-                <img src="" alt="logo" className="logo" />
-                <div className="catalog">Каталог</div>
+                <div class="navigation-block">
+                    <div class="nav-item">
+                        <div class="icon programs-icon"></div>
+                        <div class="text">Программы</div>
+                    </div>
+                    <div class="nav-item">
+                        <div class="icon patches-icon"></div>
+                        <div class="text">Патчи</div>
+                    </div>
+                    <div class="nav-item os-version">
+                        <div class="icon os-icon"></div>
+                        <div class="text">Версии ОС</div>
+                    </div>
+                </div>
             </div>
             <div className="right-block">
-                <input placeholder="Поиск статей" type="text" name="" id="" />
-                <img src="" alt="search" className="search" />
+                <input type="text" placeholder="Поиск по сайту..." class="search-bar"/>
             </div>
         </div>
         </>
