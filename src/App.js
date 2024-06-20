@@ -1,31 +1,17 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
-import Header from "./Component/Header";
-import Main from "./Component/Main";
-import Footer from "./Component/Footer";
-import Admin from "./Component/Admin";
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Main from './Component/Main';
+import ArticleDetail from './Component/ArticleDetail';
 
-function App() {
-  return (
-    <Router>
-      <Content />
-    </Router>
-  );
-}
-
-function Content() {
-  const location = useLocation();
-
-  return (
-    <>
-      {location.pathname !== "/admin" && <Header />}
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/admin" element={<Admin />} />
-      </Routes>
-      {location.pathname !== "/admin" && <Footer />}
-    </>
-  );
+const App = () => {
+    return (
+        <Router>
+            <Routes>
+                <Route exact path="/" element={<Main />} />
+                <Route path="/article/:id" element={<ArticleDetail />} />
+            </Routes>
+        </Router>
+    );
 }
 
 export default App;

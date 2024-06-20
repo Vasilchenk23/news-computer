@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../index.css';
 
 const articles = [
@@ -17,22 +18,32 @@ const articles = [
 ];
 
 const Main = () => {
+    const navigate = useNavigate();
+
+    const handleArticleClick = (index) => {
+        navigate(`/article/${index}`);
+    };
+
     return (
         <>
             <h1 className='title'>Тут мы вам расскажем все о компьютерах и не только!</h1>
             <p className='page-main'>Ждем ваш отзыв на сайте</p>
             <div className="research">
-                <input type="text" placeholder="Поиск по сайту..." class="search-bar-2"/>
+                <input type="text" placeholder="Поиск по сайту..." className="search-bar-2"/>
             </div>
             <h1 className='title-version'>Версии ОС</h1>
             <p className='page-version'>Операционные системы</p>
             <div className="news-container">
                 {articles.map((article, index) => (
-                    <div className="news-item" key={index}>
+                    <div 
+                        className="news-item" 
+                        key={index} 
+                        onClick={() => handleArticleClick(index)}
+                    >
                         <img src={article.image} alt="Article" className="news" />
                         <h2 className="news-title">{article.title}</h2>
                         <div className="news-tags">
-                            <span className="tag" >{article.overview}</span>
+                            <span className="tag">{article.overview}</span>
                         </div>
                     </div>
                 ))}
