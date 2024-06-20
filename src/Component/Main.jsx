@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../index.css';
 import Header from './Header';
+import Footer from './Footer';
 
 const articles = [
     { image: './img/logo.png', title: 'Windows 11 22H2', overview: 'V2 MSDN 6e3 TPM2.0' },
@@ -50,6 +51,7 @@ const Main = () => {
                     </div>
                 ))}
             </div>
+        <Footer/>
         </>
     );
 }
