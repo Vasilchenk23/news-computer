@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../index.css';
 import Header from './Header';
@@ -21,23 +21,34 @@ const articles = [
 
 const Main = () => {
     const navigate = useNavigate();
+    const [searchQuery, setSearchQuery] = useState('');
 
     const handleArticleClick = (index) => {
         navigate(`/article/${index}`);
     };
 
+    const filteredArticles = articles.filter(article =>
+        article.title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
     return (
         <>
-        <Header/>
+            <Header/>
             <h1 className='title'>Тут мы вам расскажем все о компьютерах и не только!</h1>
             <p className='page-main'>Ждем ваш отзыв на сайте</p>
             <div className="research">
-                <input type="text" placeholder="Поиск по сайту..." className="search-bar-2"/>
+                <input 
+                    type="text" 
+                    placeholder="Поиск по сайту..." 
+                    className="search-bar-2"
+                    value={searchQuery}
+                    onChange={e => setSearchQuery(e.target.value)}
+                />
             </div>
             <h1 className='title-version'>Версии ОС</h1>
             <p className='page-version'>Операционные системы</p>
             <div className="news-container">
-                {articles.map((article, index) => (
+                {filteredArticles.map((article, index) => (
                     <div 
                         className="news-item" 
                         key={index} 
@@ -51,7 +62,7 @@ const Main = () => {
                     </div>
                 ))}
             </div>
-        <Footer/>
+            <Footer/>
         </>
     );
 }

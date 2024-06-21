@@ -1,6 +1,8 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import '../index.css';
+import Header from './Header';
+import Footer from './Footer';
 
 const articles = [
     { 
@@ -97,13 +99,17 @@ const ArticleDetail = () => {
     }
 
     return (
-        <div className="article-detail">
-            <img src={article.image} alt="Article" className="article-image" />
-            <h2 className="article-title">{article.title}</h2>
-            <p className="article-overview">{article.overview}</p>
-            <p>{article.content}</p>
-            <a href={article.downloadLink} target="_blank" rel="noopener noreferrer"><button className='download-link'>Скачать материалы</button></a>
-        </div>
+        <>
+        <Header/>
+            <div className="article-detail" style={{textAlign:'center'}}>
+                <img src={article.image} alt="Article" className="article-image" />
+                <h2 className="article-title">{article.title}</h2>
+                <p className="article-overview">{article.overview}</p>
+                <p>{article.content}</p>
+                <a href={article.downloadLink} target="_blank" rel="noopener noreferrer"><button style={{cursor:'pointer'}} className='download-link'>Скачать материалы</button></a>
+            </div>
+        <Footer/>
+        </>
     );
 }
 
