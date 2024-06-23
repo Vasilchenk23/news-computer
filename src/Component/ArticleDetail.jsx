@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import '../index.css';
 import Header from './Header';
 import Footer from './Footer';
+import Sliders from './Sliders';
 
 const articles = [
     { 
@@ -97,18 +98,75 @@ const ArticleDetail = () => {
     if (!article) {
         return <div>Статья не найдена</div>;
     }
+    const styles = {
+        articleDetail: {
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'center',
+            alignItems: 'center',
+            padding: '200px',
+            backgroundColor: '#1E1E1E',
+            color: '#FFFFFF',
+            marginTop:'100px'
+        },
+        leftSection: {
+            flex: 1,
+            textAlign: 'center',
+            padding: '20px',
+        },
+        rightSection: {
+            flex: 1,
+            textAlign: 'left',
+            padding: '20px',
+        },
+        articleImage: {
+            maxWidth: '100%',
+            height: 'auto',
+            borderRadius: '10px',
+        },
+        articleTitle: {
+            fontSize: '24px',
+            margin: '20px 0',
+        },
+        articleOverview: {
+            fontSize: '18px',
+            margin: '10px 0',
+        },
+        articleContent: {
+            fontSize: '16px',
+            margin: '10px 0',
+        },
+        downloadButton: {
+            padding: '10px 20px',
+            fontSize: '16px',
+            color: '#FFFFFF',
+            backgroundColor: '#007BFF',
+            border: 'none',
+            borderRadius: '5px',
+            cursor: 'pointer',
+            textDecoration: 'none',
+        }
+    };
+    
 
     return (
         <>
-        <Header/>
-            <div className="article-detail" style={{textAlign:'center'}}>
-                <img src={article.image} alt="Article" className="article-image" />
-                <h2 className="article-title">{article.title}</h2>
-                <p className="article-overview">{article.overview}</p>
-                <p>{article.content}</p>
-                <a href={article.downloadLink} target="_blank" rel="noopener noreferrer"><button style={{cursor:'pointer'}} className='download-link'>Скачать материалы</button></a>
+         <Header />
+         <Sliders/>
+            <div className="article-detail" style={styles.articleDetail}>
+                <div style={styles.leftSection}>
+                    <img src={article.image} alt="Article" style={styles.articleImage} />
+                </div>
+                <div style={styles.rightSection}>
+                    <h2 style={styles.articleTitle}>{article.title}</h2>
+                    <p style={styles.articleOverview}>{article.overview}</p>
+                    <p style={styles.articleContent}>{article.content}</p>
+                    <a href={article.downloadLink} target="_blank" rel="noopener noreferrer">
+                        <button style={styles.downloadButton}>Скачать материалы</button>
+                    </a>
+                </div>
             </div>
-        <Footer/>
+            <Footer />
         </>
     );
 }

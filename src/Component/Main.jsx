@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import '../index.css';
 import Header from './Header';
 import Footer from './Footer';
+import Sliders from './Sliders';
 
 const articles = [
     { image: './img/logo.png', title: 'Windows 11 22H2', overview: 'V2 MSDN 6e3 TPM2.0' },
@@ -34,6 +35,7 @@ const Main = () => {
     return (
         <>
             <Header/>
+            <Sliders/>
             <h1 className='title'>Тут мы вам расскажем все о компьютерах и не только!</h1>
             <p className='page-main'>Ждем ваш отзыв на сайте</p>
             <div className="research">

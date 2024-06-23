@@ -4,27 +4,20 @@ const Footer = () => {
         <div className="footer">
             <div className="about-site">
                 <h1>О сайте</h1>
-                <p>Page1</p>
-                <p>Page1</p>
-                <p>Page1</p>
-                <p>Page1</p>
-                <p>Page1</p>
+                <p>Картинки</p>
+                <p>Команда</p>
             </div>
             <div className="catalog-block">
                 <h1>Каталог</h1>
-                <p>Page1</p>
-                <p>Page1</p>
-                <p>Page1</p>
-                <p>Page1</p>
-                <p>Page1</p>
+                <p>Программы</p>
+                <p>Патчи</p>
+                <p>Версии ОС</p>
             </div>
             <div className="video">
                 <h1>Видео</h1>
-                <p>Page1</p>
-                <p>Page1</p>
-                <p>Page1</p>
-                <p>Page1</p>
-                <p>Page1</p>
+                <a href="https://youtu.be/0dKspmIrBg0?si=HYtxD8HIfUXenyL6" target="_blank" rel="noopener noreferrer"><p>Как удалить вирусы на Windows 10 лучшая программа для удаления вирусов?</p></a>
+                <a href="https://youtu.be/xTmHeXA74Q4?si=S3dHPjO6Kjv0ImIX" target="_blank" rel="noopener noreferrer"><p>Нужный набор программ и компонентов для твоего ПК?</p></a>
+                <a href="https://youtu.be/LW4TMPBywKA?si=CCFgjt8uw-Sda2IR" target="_blank" rel="noopener noreferrer"><p>Дискорд нагружает ПК что делать падает фпс в игре из-за Дискорда?</p></a>
             </div>
             <div className="contact-block">
                 <h1>Мы в социальных сетях</h1>
